@@ -1,0 +1,27 @@
+# This is a very simple project that determines the ROI of a real estate
+# investment based off of the key variables. 
+
+#Get variables from the user
+print("***ROI Calculator for Real Estate***")
+insurance = int(input("Annual insurance rate: "))
+taxes = int(input("Annual tax amount: "))
+hoa_Fee = int(input("Monthly HOA Fees: "))
+hoa_Fee = hoa_Fee * 12
+home_Cost = int(input("Cost of Home: "))
+mortgage = (home_Cost - .035) * .00334
+fees = (insurance + taxes + hoa_Fee) / 12
+print (round((mortgage),2), "monthly mortgage rate")
+print ("Your total monthly expenses are:", round((fees + mortgage),2))
+      
+rent = int(input("Enter the expected monthly rent amount: "))
+      
+#Find the ROI
+ROI = (((rent * 12) - (fees * 12)) / home_Cost)
+print("The ROI is: ", ROI)
+
+#Place a simple if/else statement to determine if this is a good investment or not
+#6% is considered to be an okay investment 
+if (ROI > .06):
+    print("This is a good investment!")
+else:
+    print("This is a terrible investment")
